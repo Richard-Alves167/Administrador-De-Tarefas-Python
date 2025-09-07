@@ -8,15 +8,15 @@ while(parar_loop == False):
     opcao = input_int("\nEscolha uma opção do MENU: ")
     match opcao:
         case 1:
-            adicionar_tarefa(tarefas)
+            adicionar_tarefa()
         case 2:
-            visualisar_lista_de_tarefas(tarefas)
+            visualisar_lista_de_tarefas()
         case 3:
-            visualisar_tarefa(tarefas)
+            visualisar_tarefa()
         case 4:
-            marcar_tarefa_para_concluida(tarefas)
+            marcar_tarefa_para_concluida()
         case 5:
-            remover_tarefa(tarefas)
+            remover_tarefa()
         case 6:
             print("Desligando sistema...")
             parar_loop = True

@@ -8,3 +8,6 @@ class Tarefa:
         self.status = status
         self.prazo_final = prazo_final
         self.urgencia = urgencia
+
+    def __str__(self):
+        return f"{self.id},{self.descricao},{self.data_de_criacao},{self.status},{self.prazo_final},{self.urgencia}"

@@ -1,5 +1,9 @@
 from datetime import *
 from models import *
+import os.path
+ARQ = "tarefas.csv"
+DIR = os.path.dirname(os.path.abspath(__file__))
+ARQ = os.path.join(DIR, ARQ)
 
 def verificar_id(id, tarefas):
     for tarefa in tarefas:
@@ -26,6 +30,22 @@ def input_int(msg):
             print("Valor inválido!\nTente novamente...")
     return valor
 
+def ler_arquivo_csv():
+    tarefas = []
+    with open(ARQ, "r",encoding="utf-8") as arquivo:
+        for linha in arquivo:
+            dados = linha.strip().split(",")
+            tarefa = Tarefa(dados[0],dados[1],dados[2],dados[3],dados[4],dados[5])
+            tarefas.append(tarefa)
+    return tarefas
+
+def atualizar_arquivo_csv(lista_tarefas):
+    if (os.path.exists(ARQ)):
+        os.remove(ARQ)
+    with open(ARQ, "w",encoding="utf-8") as arquivo:
+        for tarefa in lista_tarefas:
+            arquivo.write(str(tarefa) + "\n")
+            
 def menu_urgencia():
     print("1 - Baixa")
     print("2 - Média")
