@@ -3,8 +3,8 @@ from funcoesAuxiliares import *
 
 tarefas = mock_de_tarefas()
 parar_loop = False
-menu_lista_tarefas()
 while(parar_loop == False):
+    menu_lista_tarefas()
     opcao = input_int("\nEscolha uma opção do MENU: ")
     match opcao:
         case 1:

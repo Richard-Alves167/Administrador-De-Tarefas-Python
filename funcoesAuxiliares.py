@@ -1,14 +1,16 @@
 from datetime import *
+from models import *
+
 def verificar_id(id, tarefas):
     for tarefa in tarefas:
-        if (tarefa[0] == id):
+        if (tarefa.id == id):
            return True
     return False
 
 def buscar_posicao_tarefa_em_lista(id, tarefas):
     contador = 0
     for tarefa in tarefas:
-        if (tarefa[0] == id):
+        if (tarefa.id == id):
            return contador
         contador += 1
 
@@ -83,7 +85,7 @@ def escrever_mes():
     return mes
 
 def menu_lista_tarefas():
-    print("---------- MENU LISTA DE TAREFAS ----------")
+    print("\n---------- MENU LISTA DE TAREFAS ----------")
     print("1 - Inserir tarefa")
     print("2 - Visualizar tarefas")
     print("3 - Visualizar uma tarefa")
@@ -94,12 +96,12 @@ def menu_lista_tarefas():
 
 def mock_de_tarefas():
     lista_de_tarefas = []
-    tarefa_1 = [datetime.now().strftime('%Y%m%d%H%M%S%f'), "Revisar contrato com fornecedor","10/08/2025","Em andamento","15/08/2025","Alta"]
-    tarefa_2 = [datetime.now().strftime('%Y%m%d%H%M%S%f'), "Criar layout da página inicial do site","05/08/2025","Concluída","15/08/2025","Média"]
-    tarefa_3 = [datetime.now().strftime('%Y%m%d%H%M%S%f'), "Preparar relatório de vendas do mês","12/08/2025","Em andamento","15/08/2025","Alta"]
-    tarefa_4 = [datetime.now().strftime('%Y%m%d%H%M%S%f'), "Atualizar inventário no sistema","08/08/2025","Em andamento","15/08/2025","Média"]
-    tarefa_5 = [datetime.now().strftime('%Y%m%d%H%M%S%f'), "Configurar servidor de e-mails","09/08/2025","Em andamento","15/08/2025","Alta"]
-    tarefa_6 = [datetime.now().strftime('%Y%m%d%H%M%S%f'), "Realizar backup completo do sistema","13/082025","Em andamento","15/08/2025","Urgente"]
+    tarefa_1 = Tarefa(datetime.now().strftime('%Y%m%d%H%M%S%f'), "Revisar contrato com fornecedor","10/08/2025","Em andamento","15/08/2025","Alta")
+    tarefa_2 = Tarefa(datetime.now().strftime('%Y%m%d%H%M%S%f'), "Criar layout da página inicial do site","05/08/2025","Concluída","15/08/2025","Média")
+    tarefa_3 = Tarefa(datetime.now().strftime('%Y%m%d%H%M%S%f'), "Preparar relatório de vendas do mês","12/08/2025","Em andamento","15/08/2025","Alta")
+    tarefa_4 = Tarefa(datetime.now().strftime('%Y%m%d%H%M%S%f'), "Atualizar inventário no sistema","08/08/2025","Em andamento","15/08/2025","Média")
+    tarefa_5 = Tarefa(datetime.now().strftime('%Y%m%d%H%M%S%f'), "Configurar servidor de e-mails","09/08/2025","Em andamento","15/08/2025","Alta")
+    tarefa_6 = Tarefa(datetime.now().strftime('%Y%m%d%H%M%S%f'), "Realizar backup completo do sistema","13/082025","Em andamento","15/08/2025","Urgente")
 
     lista_de_tarefas.append(tarefa_1)
     lista_de_tarefas.append(tarefa_2)
