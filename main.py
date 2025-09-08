@@ -1,4 +1,4 @@
-from funcoesTarefas import * 
+from funcoesTarefas_db import * 
 from funcoesAuxiliares import *
 
 tarefas = mock_de_tarefas()

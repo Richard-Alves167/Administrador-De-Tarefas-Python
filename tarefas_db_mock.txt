@@ -1,0 +1,20 @@
+.open tarefa.db;
+.mode table;
+
+drop table if exists tarefa;
+
+create table tarefa (
+	id integer primary key autoincrement,
+	descricao text not null,
+	data_de_criacao date,
+	status text not null,
+	prazo_final date,
+	urgencia text not null
+);
+
+insert into tarefa (descricao, data_de_criacao, status, prazo_final, urgencia) values ('Revisar contrato com fornecedor','10-08-2025','Em andamento','15-08-2025','Alta');
+insert into tarefa (descricao, data_de_criacao, status, prazo_final, urgencia) values ('Criar layout da página inicial do site','05-08-2025','Concluída','15-08-2025','Média');
+insert into tarefa (descricao, data_de_criacao, status, prazo_final, urgencia) values ('Preparar relatório de vendas do mês','12-08-2025','Em andamento','15-08-2025','Alta');
+insert into tarefa (descricao, data_de_criacao, status, prazo_final, urgencia) values ('Atualizar inventário no sistema','08-08-2025','Em andamento','15-08-2025','Média');
+insert into tarefa (descricao, data_de_criacao, status, prazo_final, urgencia) values ('Configurar servidor de e-mails','09-08-2025','Em andamento','15-08-2025','Alta');
+insert into tarefa (descricao, data_de_criacao, status, prazo_final, urgencia) values ('Realizar backup completo do sistema','13-08-2025','Em andamento','15-08-2025','Urgente');
